@@ -490,7 +490,7 @@ class Client(object):
         }
 
         # include payload
-        if data is not None:
+        if data is not None and (not isinstance(data, dict) or data):
             headers['Content-type'] = 'application/json'
             body = json.dumps(data)
 
